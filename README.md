@@ -1,7 +1,7 @@
 # Reports for Python, with JasperReports.
 [![Build Status](https://travis-ci.org/jadsonbr/pyreport.svg?branch=0.1.x)](https://travis-ci.org/jadsonbr/pyreport)
-[![Coverage Status](https://coveralls.io/repos/github/jadsonbr/pyreport/badge.svg?branch=master)](https://coveralls.io/github/jadsonbr/pyreport?branch=master)
-[![Code Health](https://landscape.io/github/jadsonbr/pyreport/master/landscape.svg?style=flat)](https://landscape.io/github/jadsonbr/pyreport/master)
+[![Coverage Status](https://coveralls.io/repos/github/jadsonbr/pyreport/badge.svg?branch=0.1.x)](https://coveralls.io/github/jadsonbr/pyreport?branch=0.1.x)
+[![Code Health](https://landscape.io/github/jadsonbr/pyreport/0.1.x/landscape.svg?style=flat)](https://landscape.io/github/jadsonbr/pyreport/0.1.x)
 [![PyPI](https://img.shields.io/pypi/l/pyreportjasper.svg)](https://github.com/jadsonbr/pyreport/blob/master/LICENSE)
 
 **Language**
