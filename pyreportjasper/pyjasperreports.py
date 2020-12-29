@@ -28,6 +28,7 @@ class PyJasperReports:
         import jpy
         self.jvStringBuilder = jpy.get_type('java.lang.StringBuilder')
         self.jvHashMap = jpy.get_type('java.util.HashMap')
+        self.jvByteArrayInputStream = jpy.get_type('java.io.ByteArrayInputStream')
 
         self.jvJasperFillManager = jpy.get_type('net.sf.jasperreports.engine.JasperFillManager')
         self.jvJasperCompileManager = jpy.get_type('net.sf.jasperreports.engine.JasperCompileManager')
@@ -66,13 +67,16 @@ class PyJasperReports:
                 raise NameError('Invalid resource directory!')
 
         self.resource_directory = resource_dir
-        
-        
-    def compile(self, input_file, output_file=False):
-        jr = self.jvJasperCompileManager.compileReport(input_file)
-        if output_file:
-            base = os.path.splitext(input_file)[0]
-            self.jvJRSaver.saveObject(jr, base + ".jasper");
+
+    def compile(self, input_file=None, file_contents=None, output_file=None):
+        if input_file != None:
+            jr = self.jvJasperCompileManager.compileReport(input_file)
+        else:
+            stream = self.jvByteArrayInputStream(file_contents)
+            jr = self.jvJasperCompileManager.compileReport(stream)
+
+        if output_file != None:
+            self.jvJRSaver.saveObject(jr, output_file)
         return jr
 
     def load(self, jasper_file):
